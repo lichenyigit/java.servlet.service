@@ -1,6 +1,13 @@
 package java.servlet.service.servlet.base;
 
 import java.io.IOException;
+import java.servlet.service.bean.Result;
+import java.servlet.service.exception.DatabaseException;
+import java.servlet.service.exception.JsonConvertFailedException;
+import java.servlet.service.exception.RequestToMapException;
+import java.servlet.service.exception.base.BaseException;
+import java.servlet.service.util.CommonUtil;
+import java.servlet.service.util.JsonUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,13 +17,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.shihou.summer.activities.bean.Result;
-import com.shihou.summer.activities.exception.DatabaseException;
-import com.shihou.summer.activities.exception.JsonConvertFailedException;
-import com.shihou.summer.activities.exception.RequestToMapException;
-import com.shihou.summer.activities.exception.base.BaseException;
-import com.shihou.summer.activities.util.CommonUtil;
-import com.shihou.summer.activities.util.JsonUtil;
 
 
 abstract public class BaseGetServlet<T> extends HttpServlet{

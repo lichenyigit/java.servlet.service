@@ -1,5 +1,6 @@
 package java.servlet.service.util;
 
+import java.servlet.service.exception.RequestToMapException;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -12,8 +13,6 @@ import java.util.Map.Entry;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.shihou.summer.activities.exception.RequestToMapException;
 
 public class CommonUtil {
 

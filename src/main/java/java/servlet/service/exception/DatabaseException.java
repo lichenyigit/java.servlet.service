@@ -1,8 +1,8 @@
 package java.servlet.service.exception;
 
+import java.servlet.service.exception.base.BaseException;
 import java.sql.SQLException;
 
-import com.shihou.summer.activities.exception.base.BaseException;
 
 public class DatabaseException extends BaseException {
 

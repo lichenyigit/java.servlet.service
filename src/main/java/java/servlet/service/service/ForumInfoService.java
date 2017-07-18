@@ -1,5 +1,16 @@
 package java.servlet.service.service;
 
+import java.servlet.service.bean.Page;
+import java.servlet.service.exception.DatabaseException;
+import java.servlet.service.exception.UserExistException;
+import java.servlet.service.exception.UserFabulousedException;
+import java.servlet.service.util.CommonUtil;
+import java.servlet.service.util.DBUtil;
+import java.servlet.service.util.DateUtil;
+import java.servlet.service.util.StringUtil;
+import java.servlet.service.util.dictionnary.AuditStatusEnum;
+import java.servlet.service.util.dictionnary.EnableEnum;
+import java.servlet.service.util.dictionnary.OrderByTypeEnum;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,20 +18,9 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
-import com.shihou.summer.activities.exception.UserFabulousedException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.shihou.summer.activities.bean.Page;
-import com.shihou.summer.activities.exception.DatabaseException;
-import com.shihou.summer.activities.exception.UserExistException;
-import com.shihou.summer.activities.util.CommonUtil;
-import com.shihou.summer.activities.util.DBUtil;
-import com.shihou.summer.activities.util.DateUtil;
-import com.shihou.summer.activities.util.StringUtil;
-import com.shihou.summer.activities.util.dictionnary.AuditStatusEnum;
-import com.shihou.summer.activities.util.dictionnary.EnableEnum;
-import com.shihou.summer.activities.util.dictionnary.OrderByTypeEnum;
 
 
 /**
@@ -124,7 +124,7 @@ public class ForumInfoService {
 	 * @throws DatabaseException
 	 * 2017年7月17日 下午4:19:52 by lichenyi
 	 */
-	public static Page<Map<String, Object>> queryList(String uid, String content, AuditStatusEnum auditStatus, EnableEnum enableStatus, OrderByTypeEnum roderType, Long pageSize, Long pageNum) throws DatabaseException{
+	public static Page<Map<String, Object>> queryList(String uid, String content, AuditStatusEnum auditStatus, EnableEnum enableStatus, OrderByTypeEnum roderType, Long pageSize, Long pageNum) throws DatabaseException {
 		try(Connection conn = DBUtil.getConnection()){
 			Page<Map<String, Object>> page = new Page<Map<String, Object>>();
 			page.setPage(pageNum);
@@ -137,7 +137,7 @@ public class ForumInfoService {
 		}
 	}
 	
-	private static boolean _add(String uid, String content, Connection conn) throws SQLException, UserExistException{
+	private static boolean _add(String uid, String content, Connection conn) throws SQLException, UserExistException {
 		//每人只允许评论一次
 		PreparedStatement pstmtQuery = conn.prepareStatement("SELECT COUNT(*) FROM forum_info WHERE uid = ?");
 		pstmtQuery.setString(1, uid);

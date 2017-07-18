@@ -1,7 +1,7 @@
 package java.servlet.service.exception;
 
 
-import com.shihou.summer.activities.exception.base.BaseException;
+import java.servlet.service.exception.base.BaseException;
 
 public class ParameterConvertException extends BaseException {
 	private static final long serialVersionUID = -6993502737292105768L;

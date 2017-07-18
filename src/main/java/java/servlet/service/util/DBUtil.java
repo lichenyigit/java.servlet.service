@@ -1,5 +1,6 @@
 package java.servlet.service.util;
 
+import java.servlet.service.listenner.Listenner;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -7,7 +8,6 @@ import java.sql.SQLException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.shihou.summer.activities.listenner.Listenner;
 
 public class DBUtil {
 	private static final Logger logger = LogManager.getLogger();

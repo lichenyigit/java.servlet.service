@@ -3,11 +3,11 @@ package java.servlet.service.servlet;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.servlet.service.exception.base.BaseException;
+import java.servlet.service.service.ForumInfoService;
+import java.servlet.service.servlet.base.BasePostServlet;
+import java.servlet.service.util.ConvertUtil;
 
-import com.shihou.summer.activities.exception.base.BaseException;
-import com.shihou.summer.activities.service.ForumInfoService;
-import com.shihou.summer.activities.servlet.base.BasePostServlet;
-import com.shihou.summer.activities.util.ConvertUtil;
 
 /**
  * 点赞接口

@@ -1,6 +1,7 @@
 package java.servlet.service.bean;
 
-import com.shihou.summer.activities.exception.base.BaseException;
+
+import java.servlet.service.exception.base.BaseException;
 
 public class Result<T> {
 	private String errorCode;
