@@ -1,0 +1,16 @@
+<Context>
+
+	<!-- 连接池设置 --> 
+	<Environment name="jdbc/zqt/properties/username" type="java.lang.String" value="admincz"/>
+	<Environment name="jdbc/zqt/properties/password" type="java.lang.String" value="somethingyouxiduo"/>
+	<Environment name="jdbc/zqt/properties/url" type="java.lang.String" value="jdbc:mysql://10.168.196.111:3306/2017_summer_activities"/>
+	<Environment name="jdbc/zqt/properties/defaultAutoCommit" type="java.lang.String" value="false"/>
+	<Environment name="jdbc/zqt/properties/driverClassName" type="java.lang.String" value="com.mysql.jdbc.Driver"/>
+	<Environment name="jdbc/zqt/properties/rollbackOnReturn" type="java.lang.String" value="true"/><!-- 如果不是默认提交，则归还连接时默认执行rollback！ -->
+	<Environment name="jdbc/zqt/properties/validationQuery" type="java.lang.String" value="SELECT 1"/>
+	<Environment name="jdbc/zqt/properties/maxIdle" type="java.lang.String" value="10"/>
+	<Environment name="jdbc/zqt/properties/maxTotal" type="java.lang.String" value="10"/>
+	<Environment name="jdbc/zqt/properties/maxWaitMillis" type="java.lang.String" value="1000"/>
+	<Environment name="jdbc/zqt/properties/testWhileIdle" type="java.lang.String" value="true"/>
+	
+</Context>
